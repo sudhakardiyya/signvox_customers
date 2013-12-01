@@ -26,14 +26,9 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(params[:customer])
-    puts "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
-    puts @customer
-    puts "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
       if @customer.save
-        puts "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
         redirect_to customers_path
       else
-        puts "/////////////////////////////////////////////////"
         render action: "new"
       end
   end
